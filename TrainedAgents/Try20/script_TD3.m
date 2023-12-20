@@ -256,7 +256,7 @@ SS1env.reset();
 save('initialAgent_p3_20e4.mat','agent','trainingStats','SS1env');
 
 % Train for 3e.
-trainingStats.TrainingOptions.MaxEpisodes=6.0e6;
+trainingStats.TrainingOptions.MaxEpisodes=6.0e5;
 trainingStats = train(agent,SS1env,trainingStats);
 SS1env.reset();
 save('initialAgent_p3_25e4.mat','agent','trainingStats','SS1env');
