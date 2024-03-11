@@ -1,5 +1,5 @@
 % Example of an agent overshooting the steady-state transition, but recovering.
-% Used to make Figure S11.
+% Used to make Figure S12.
 clear;
 
 % Get the required variables.
