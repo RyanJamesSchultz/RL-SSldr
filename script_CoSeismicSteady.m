@@ -1,5 +1,5 @@
 % Script to demonstrate steady-slip, immediately following co-seismic slip.
-% Used to make Figure S3.
+% Used to make Figure S4.
 clear;
 
 % Define some paramteres.
