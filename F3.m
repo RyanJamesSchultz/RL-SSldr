@@ -1,5 +1,5 @@
 % Script to plot the reined trajectories and injection schemes.
-% Used to assist in making Figure 3 (and Figure S5).
+% Used to assist in making Figure 3 (and Figure S6).
 % Note that the AlgoRein files may need to be recomputed for different machines.
 clear;
 
