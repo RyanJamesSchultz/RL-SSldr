@@ -1,5 +1,5 @@
 % Example of an agent undershooting the end-point goal, but recovering.
-% Used to make Figure S10.
+% Used to make Figure S11.
 clear;
 
 % Get the required variables.
