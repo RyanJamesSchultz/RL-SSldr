@@ -1,5 +1,5 @@
 % Script to plot the reining stress rate over the entire earthquake cycle.
-% Used to makes Figures S1 & S2.
+% Used to makes Figures S1-S3.
 %%% NOTE that you have to temporarily change the prime_fault time duration (i.e., to 43 years) in RL_SSenv to go through multiple cycles.
 clear;
 
