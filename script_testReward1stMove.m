@@ -1,5 +1,5 @@
 % Script to test the rewards for the first move.
-% Used to inform reward shaping (and making Figure S8).
+% Used to inform reward shaping (and making Figure S9).
 clear;
 
 % Create the spring slider environment.
