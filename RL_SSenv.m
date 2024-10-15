@@ -1,6 +1,6 @@
 classdef RL_SSenv < rl.env.MATLABEnvironment
     % SpringSlider_Environment: Reinforcement learning environment for 
-    % stabilizing a spring-slider system.
+    % reining-in a spring-slider system.
     % 
     % Written by Ryan Schultz.
     
