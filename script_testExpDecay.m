@@ -1,7 +1,7 @@
 % Script to verify if constant velocity reined-slip produces exponential decay.
 clear;
 
-% Load in the dP vs T data from Figure 3.
+% Load in the dP vs T data from Figure 5.
 load('AlgoRein_v24.mat','logVs');
 load('PvT.mat','t2','P2','env2','I2','i2');
 t2=t2-t2(1);

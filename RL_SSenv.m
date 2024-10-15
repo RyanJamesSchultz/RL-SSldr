@@ -294,7 +294,7 @@ classdef RL_SSenv < rl.env.MATLABEnvironment
                 g1=(-Theta*V/Dc)*log(Theta*V/Dc);
             end
             
-            % Generate the best guess, based on numerical estimation of normal stressing rate (Eqn S1.8).
+            % Generate the best guess, based on numerical estimation of normal stressing rate (Eqn 8).
             dNdt=(N*g1*b)/(alpha*Theta)-(dTdt/alpha);
             dPdt=log10(abs(dNdt)); % Returned in the action-space format.
             
@@ -335,7 +335,7 @@ classdef RL_SSenv < rl.env.MATLABEnvironment
                 g1=(-Theta.*V/Dc).*log(Theta.*V/Dc);
             end
             
-            % Generate the best guess, based on numerical estimation of normal stressing rate (Eqn S1.8).
+            % Generate the best guess, based on numerical estimation of normal stressing rate (Eqn 8).
             dNdt=(N.*g1.*b)./(alpha*Theta)-(dTdt/alpha);
             dPdt=-dNdt; % Returned in the action-space format.
             
@@ -424,11 +424,11 @@ classdef RL_SSenv < rl.env.MATLABEnvironment
             i=find(I,true,'first');
             Vss = logspace(-12,0,100);
             fss = fsteadystate(this,Vss);
-            fsb = fstablebound(this,Vss);
+            %fsb = fstablebound(this,Vss);
             semilogx(this.Os.V(I),this.Os.tau(I)./this.Os.norm(I),'-b','DisplayName','\mu'); hold on;
             semilogx(this.Os.V(i),this.Os.tau(i)./this.Os.norm(i),'ob','HandleVisibility','off');
             semilogx(Vss,fss,'--k','DisplayName','\mu_{SS}');
-            semilogx(Vss,fsb,'-r','DisplayName','\mu_{SB}');
+            %semilogx(Vss,fsb,'-r','DisplayName','\mu_{SB}');
             semilogx(Vfail*[1 1],ylim(),':k','HandleVisibility','off');
             semilogx(Vslow*[1 1],ylim(),':k','HandleVisibility','off');
             xlabel('Fault slip velocity, V (m/s)');

@@ -1,5 +1,5 @@
 % Script to test the rewards for the first move.
-% Used to inform reward shaping (and making Figure S9).
+% Used to inform reward shaping (and making Figure S4).
 clear;
 
 % Create the spring slider environment.
@@ -19,7 +19,7 @@ Vi=SS1env.State(1);
 dVb=10;
 j=0;
 
-% Generate the best guess, based on numerical estimation of normal stressing rate (Eqn S1.8).
+% Generate the best guess, based on numerical estimation of normal stressing rate (Eqn 8).
 dPdt_num=SS1env.ReiningAction();
 
 % Sample the whole range.

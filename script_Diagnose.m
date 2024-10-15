@@ -5,7 +5,7 @@ clear;
 n=1000;
 
 % Load environment & agent.
-load('TrainedAgents/Try20/Agent_p3_20e4.mat');
+load('TrainedAgents/Try20/Agent_p3_25e4.mat');
 SS1env.reset();
 
 % Plot.

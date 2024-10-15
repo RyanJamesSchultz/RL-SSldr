@@ -1,5 +1,5 @@
 % Script to show the allowable actions in the phase-space.
-% Used to assist in making Figure 2.
+% Used to assist in making Figure 3.
 clear;
 
 % Define the environment & action experience structure.

@@ -1,5 +1,5 @@
 % A script that will automatically define the action-history to rein-in the spring-slider system.
-% This algorithm uses the numerical estimation of normal stressing rate (Eqn S1.8) for a guided-check.
+% This algorithm uses the numerical estimation of normal stressing rate (Eqn 8) for a guided-check.
 clear;
 
 % Define some values.
@@ -30,7 +30,7 @@ while(i<Nsteps)
     env.reset();
     V=env.Oc.V(end);
     
-    % Generate a candidate action, based on numerical estimation of normal stressing rate (Eqn S1.8).
+    % Generate a candidate action, based on numerical estimation of normal stressing rate (Eqn 8).
     dPdt=env.ReiningAction();
     action=[dPstep;dPdt+Cf];
     
