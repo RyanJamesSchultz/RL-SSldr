@@ -33,8 +33,8 @@ expBatch2(i).Action={[ +3.00;+0.60]}; i=i+1;
 expBatch2(i).Action={[ +4.00;+0.80]}; i=i+1;
 expBatch2(i).Action={[ +6.00;+1.00]}; i=i+1;
 expBatch2(i).Action={[+20.00;+1.20]}; i=i+1;
-%expBatch2(i).Action={[+40.00;+1.40]}; i=i+1;
-%expBatch2(i).Action={[+100.00;+1.60]}; i=i+1;
+expBatch2(i).Action={[+40.00;+1.40]}; i=i+1;
+expBatch2(i).Action={[+100.00;+1.60]}; i=i+1;
 
 % Run the routine and collect the data.
 V_n=zeros(size(expBatch2)); dNdt_n=V_n; dTdt_n=V_n;
