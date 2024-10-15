@@ -4,7 +4,7 @@
 clear;
 
 % Load in the agent and then overwrite the environment.
-load('/Users/rschultz/Desktop/RL-SSldr/codes/MatLab/TrainedAgents/Try20/Agent_p3_25e4.mat');
+load('TrainedAgents/Try20/Agent_p3_25e4.mat');
 SS1env = RL_SSenv();
 
 % Manually prescribe the first move, which will trigger earthquake slip nucleation.
