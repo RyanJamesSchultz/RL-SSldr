@@ -24,17 +24,19 @@ k=env.P0.k;
 
 % Define new action-history structure.
 expBatch2=struct('Observation',[],'Action',[],'Reward',[],'NextObservation',[],'IsDone',[]); i=1;
+Nr=[];
 
 % Make a batch of additional hand-picked actions.
-expBatch2(i).Action={[ +1.00;+0.00]}; i=i+1;
-expBatch2(i).Action={[ +2.00;+0.20]}; i=i+1;
-expBatch2(i).Action={[ +2.00;+0.40]}; i=i+1;
-expBatch2(i).Action={[ +3.00;+0.60]}; i=i+1;
-expBatch2(i).Action={[ +4.00;+0.80]}; i=i+1;
-expBatch2(i).Action={[ +6.00;+1.00]}; i=i+1;
-expBatch2(i).Action={[+20.00;+1.20]}; i=i+1;
-expBatch2(i).Action={[+40.00;+1.40]}; i=i+1;
-expBatch2(i).Action={[+100.00;+1.60]}; i=i+1;
+expBatch2(i).Action={[ +1.00;+0.00]}; Nr(i)=1; i=i+1; % I can't go below this case, as the spring-slider would just transition into the post-seismic phase.
+expBatch2(i).Action={[ +2.00;+0.20]}; Nr(i)=1; i=i+1;
+expBatch2(i).Action={[ +2.00;+0.40]}; Nr(i)=1; i=i+1;
+expBatch2(i).Action={[ +3.00;+0.60]}; Nr(i)=2; i=i+1;
+expBatch2(i).Action={[ +4.00;+0.80]}; Nr(i)=3; i=i+1;
+expBatch2(i).Action={[ +6.00;+1.00]}; Nr(i)=4; i=i+1;
+expBatch2(i).Action={[+20.00;+1.20]}; Nr(i)=5; i=i+1;
+expBatch2(i).Action={[+40.00;+1.40]}; Nr(i)=7; i=i+1;
+expBatch2(i).Action={[+60.00;+1.60]}; Nr(i)=8; i=i+1; % I can't go above this case, as this already (almost) completely depletes the fault stress.
+
 
 % Run the routine and collect the data.
 V_n=zeros(size(expBatch2)); dNdt_n=V_n; dTdt_n=V_n;
@@ -42,7 +44,9 @@ for i=1:length(expBatch2)
     i
     env.reset();
     expBatch2(i).Observation={env.State()};
-    [obs,rew,done,~] = env.step(expBatch2(i).Action{1});
+    for j=1:Nr(i)
+        [obs,rew,done,~] = env.step(expBatch2(i).Action{1});
+    end
     expBatch2(i).Observation={obs};
     expBatch2(i).Reward=rew;
     expBatch2(i).NextObservation={env.State()};
